@@ -16,9 +16,9 @@ public class User {
     private String username;
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String fullName;
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String email;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
