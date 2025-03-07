@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Store</title>
+    <link rel="stylesheet" th:href="@{/css/Products.css}">
+</head>
+<body>
+<h1>Welcome to Spring Shop. Let Shopping!</h1>
+<div class="header">
+    <form th:action="@{/search}" method="get">
+        <input type="text" name="keyword" th:value="${keyword}" autofocus>
+        <button type="submit">Search</button>
+        <a th:href="@{/newperson}">Check Out</a>
+    </form>
+</div>
+<div class="list-product">
+    <div th:each="product: ${products}" class="product">
+        <div th:text="${product.getName()}" class="name"></div>
+        <div th:text="${product.getFormattedPrice()}" class="price"></div>
+        <div>
+            <img alt="" th:src="${product.getImage()}"/>
+        </div>
+        <form th:action="@{/delete}">
+            <div class="cart">
+                <label>
+                    <input type="number" name="quantity">
+                </label>
+                <button>Add to card</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

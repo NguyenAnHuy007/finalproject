@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Giỏ hàng</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${cartItems}">
+        <td th:text="${item.product.name}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td>
+            <form method="post" th:action="@{/cart/remove}">
+                <input type="hidden" name="cartItemId" th:value="${item.id}">
+                <button type="submit">Xóa</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<form method="post" th:action="@{/cart/checkout}">
+    <button type="submit">Thanh toán</button>
+</form>
+<a href="/products">Tiếp tục mua sắm</a>
+</body>
+</html>
