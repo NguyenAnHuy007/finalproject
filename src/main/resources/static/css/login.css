@@ -1,0 +1,105 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body tổng thể */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #a6c0fe, #f68084); /* Gradient đỏ và xanh lam */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    min-height: 100vh; /* Chiều cao tối thiểu chiếm toàn bộ màn hình */
+    color: #333;
+}
+
+/* Form container */
+form {
+    width: 100%;
+    max-width: 400px; /* Chiều rộng tối đa */
+    background: #fff; /* Màu nền trắng */
+    padding: 30px; /* Khoảng cách bên trong form */
+    border-radius: 10px; /* Bo góc */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng */
+    text-align: left; /* Canh trái nội dung */
+}
+
+/* Tiêu đề */
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center; /* Căn giữa tiêu đề */
+    color: #4facfe;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Chữ in hoa */
+    letter-spacing: 1px; /* Tạo khoảng cách giữa chữ */
+}
+
+/* Label */
+form label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #666;
+    display: block;
+    font-weight: bold;
+}
+
+/* Input fields */
+form input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Hiệu ứng input focus */
+form input:focus {
+    border-color: #4facfe;
+    box-shadow: 0 0 8px rgba(79, 172, 254, 0.4); /* Ánh sáng bên ngoài */
+    outline: none;
+}
+
+/* Nút Đăng nhập */
+form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #4facfe, #00f2fe); /* Gradient xanh lam nhạt */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s; /* Hiệu ứng hover */
+}
+
+form button[type="submit"]:hover {
+    background: linear-gradient(90deg, #287abd, #00cdef);
+    transform: translateY(-2px); /* Hiệu ứng di chuyển nhỏ khi hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Link đăng ký */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: #287abd;
+    text-shadow: 0 0 5px rgba(79, 172, 254, 0.8);
+}

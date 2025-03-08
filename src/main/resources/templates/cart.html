@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Giỏ hàng</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </head>
 <body>
 <h1>Giỏ hàng</h1>
@@ -29,7 +29,7 @@
     </tbody>
 </table>
 <form method="post" th:action="@{/cart/checkout}">
-    <button type="submit">Thanh toán</button>
+    <button th:if="${#lists.size(cartItems) > 0}" type="submit">Thanh toán</button>
 </form>
 <a href="/products">Tiếp tục mua sắm</a>
 </body>

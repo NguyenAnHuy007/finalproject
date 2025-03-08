@@ -19,6 +19,6 @@ public class ProductService {
     }
 
     public List<Product> searchProduct(String name){
-        return productRepository.findByNameContainingIgnoreCase(name);
+        return productRepository.findProductByNameContainingIgnoreCase(name);
     }
 }

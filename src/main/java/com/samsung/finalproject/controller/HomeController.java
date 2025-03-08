@@ -26,16 +26,16 @@ public class HomeController {
         return "products";
     }
 
-    @GetMapping("search")
+    @GetMapping("/search")
     public String search(@RequestParam(required = false, defaultValue = "") String keyword, Model model) {
         List<Product> products;
         if (keyword.isEmpty()) {
-            products = productService.getAllProducts(); // Trả về tất cả sản phẩm nếu không có keyword
+            products = productService.getAllProducts();
         } else {
-            products = productService.searchProduct(keyword); // Tìm kiếm sản phẩm theo tên
+            products = productService.searchProduct(keyword);
         }
         model.addAttribute("products", products);
-        model.addAttribute("keyword", keyword); // Dùng để hiển thị lại giá trị tìm kiếm trong ô input
+        model.addAttribute("keyword", keyword);
         return "products";
     }
 

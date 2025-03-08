@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: linear-gradient(135deg, #83a4d4, #b6fbff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 15px;
+}
+
+
+form {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #4facfe;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+}
+
+
+form input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus {
+    border-color: #4facfe; /* Viền xanh sáng khi focus */
+    box-shadow: 0 0 8px rgba(79, 172, 254, 0.5); /* Ánh sáng bên ngoài */
+    outline: none;
+}
+
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #4facfe, #00f2fe); /* Gradient nút */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+    background: linear-gradient(90deg, #287abd, #00d1e5);
+    transform: scale(1.02);
+}
+
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4facfe;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s, text-shadow 0.2s;
+}
+
+a:hover {
+    color: #287abd;
+    text-shadow: 0 0 5px rgba(79, 172, 254, 0.8);
+}

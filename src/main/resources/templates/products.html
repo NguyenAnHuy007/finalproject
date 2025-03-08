@@ -2,35 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Store</title>
-    <link rel="stylesheet" th:href="@{/css/Products.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Shop</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Welcome to Spring Shop. Let Shopping!</h1>
-<div class="header">
-    <form th:action="@{/search}" method="get">
-        <input type="text" name="keyword" th:value="${keyword}" autofocus>
-        <button type="submit">Search</button>
-        <a th:href="@{/newperson}">Check Out</a>
-    </form>
-</div>
-<div class="list-product">
-    <div th:each="product: ${products}" class="product">
-        <div th:text="${product.getName()}" class="name"></div>
-        <div th:text="${product.getFormattedPrice()}" class="price"></div>
-        <div>
-            <img alt="" th:src="${product.getImage()}"/>
-        </div>
-        <form th:action="@{/delete}">
-            <div class="cart">
-                <label>
-                    <input type="number" name="quantity">
-                </label>
-                <button>Add to card</button>
-            </div>
+<header class="header">
+    <div class="brand">
+        <h1>Welcome to Spring Shop. Let Shopping!</h1>
+    </div>
+    <div class="search-bar">
+        <form th:action="@{/search}" method="get">
+            <input type="text" name="keyword" th:value="${keyword}" placeholder="Search any thing..." autofocus>
+            <button type="submit">Search</button>
+            <a class="checkout-btn" th:href="@{/cart}">Check Out</a>
         </form>
     </div>
-</div>
+</header>
+
+<main>
+    <div class="list-product">
+        <div th:each="product: ${products}" class="product-card">
+            <div class="product-image">
+                <img alt="Product Image" th:src="${product.getImage()}">
+            </div>
+            <div class="product-details">
+                <div class="product-name" th:text="${product.getName()}"></div>
+                <div class="product-price" th:text="${product.getFormattedPrice()}"></div>
+            </div>
+            <form class="cart-form" th:action="@{/cart/add}" method="post">
+                <div class="cart-controls">
+                    <input type="hidden" name="productId" th:value="${product.getId()}">
+                    <input type="number" name="quantity" min="1" placeholder="Số lượng">
+                    <button type="submit">Thêm vào giỏ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!--    <div th:if="${#httpServletRequest.getSession().getAttribute('loggedInUser') != null}">-->
+<!--        <a class="checkout-btn" th:href="@{/cart}" th:if="${#lists.size(cartItems) > 0}">Thanh toán</a>-->
+<!--    </div>-->
+</main>
 </body>
 </html>
