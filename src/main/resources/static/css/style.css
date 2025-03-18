@@ -1,3 +1,4 @@
+/* Reset and base styles */
 body, h1, h2, p, div, form {
     margin: 0;
     padding: 0;
@@ -7,20 +8,27 @@ body, h1, h2, p, div, form {
 body {
     font-family: Arial, sans-serif;
     color: #333;
-    background: linear-gradient(to bottom, #ffffff, #f0f8ff);
+    background: linear-gradient(to bottom, #ffffff, #f7f8f3);
     text-align: center;
     line-height: 1.6;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* Header styles */
 .header {
-    background: #4facfe;
+    background: #78bcc4;
     color: white;
     padding: 20px 0;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.brand{
-    align-items: center;
+.header:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .header .brand h1 {
@@ -30,13 +38,10 @@ body {
     margin-bottom: 5px;
 }
 
-.header .brand p {
-    font-size: 16px;
-    font-weight: 300;
-    margin-bottom: 10px;
-}
-
 .header .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -46,49 +51,81 @@ body {
     font-size: 14px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: box-shadow 0.3s;
 }
 
-.header .search-bar button {
+.header .search-bar input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.header .search-bar button,
+.header .checkout-btn,
+.header .logout-btn {
     margin-left: 10px;
     padding: 10px 20px;
     font-size: 14px;
-    background-color: #4facfe;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .header .search-bar button:hover {
-    background-color: saddlebrown;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header .checkout-btn {
-    margin-left: 10px;
-    padding: 10px 20px;
-    background: olivedrab;
-    color: white;
+    background-color: rgba(28,130,0,1);
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    font-weight: normal;
 }
 
 .header .checkout-btn:hover {
-    background-color: #4facfe;
+    background-color: rgba(28,130,0,0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.header .logout-btn {
+    background-color: #f7444e;
+    font-weight: normal;
+}
+
+.header .logout-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header .search-btn {
+    background-color: #23468a;
+    font-weight: normal;
+}
+
+.header .search-btn:hover {
+    background-color: #134495;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Product list styles */
 .list-product {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    background: #f9f9f9;
+    background: #f7f8f3;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.list-product:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .product-card {
@@ -108,7 +145,7 @@ body {
 
 .product-image img {
     width: 100%;
-    height: 150px;
+    height: 300px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
 }
@@ -128,10 +165,11 @@ body {
 
 .product-price {
     font-size: 16px;
-    color: #4facfe;
+    color: #78bcc4;
     font-weight: 500;
 }
 
+/* Cart form styles */
 .cart-form {
     padding: 15px;
     background: #f7f7f7;
@@ -154,20 +192,26 @@ body {
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.cart-controls input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .cart-controls button {
     padding: 8px 12px;
     font-size: 14px;
-    background-color: #4facfe;
+    background-color: #78bcc4;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .cart-controls button:hover {
-    background-color: #00f2fe;
+    background-color: #5a9ca0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-

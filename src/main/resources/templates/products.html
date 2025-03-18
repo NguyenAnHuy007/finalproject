@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +9,20 @@
 <body>
 <header class="header">
     <div class="brand">
-        <h1>Welcome to Spring Shop. Let Shopping!</h1>
+        <a href="/"><h1>Welcome to Spring Shop. Let Shopping!</h1></a>
     </div>
     <div class="search-bar">
         <form th:action="@{/search}" method="get">
             <input type="text" name="keyword" th:value="${keyword}" placeholder="Search any thing..." autofocus>
-            <button type="submit">Search</button>
-            <a class="checkout-btn" th:href="@{/cart}">Check Out</a>
+            <button class="search-btn" type="submit">Search</button>
         </form>
+        <a th:href="@{/cart}"><button class="checkout-btn">Check out</button></a>
+        <form th:action="@{/logout}" method="post" style="display: inline; margin: 0;">
+            <button type="submit" class="logout-btn">Đăng xuất</button>
+        </form>
+    </div>
+    <div sec:authorize="isAuthenticated()" style="display: inline;">
+
     </div>
 </header>
 
@@ -39,9 +45,6 @@
             </form>
         </div>
     </div>
-<!--    <div th:if="${#httpServletRequest.getSession().getAttribute('loggedInUser') != null}">-->
-<!--        <a class="checkout-btn" th:href="@{/cart}" th:if="${#lists.size(cartItems) > 0}">Thanh toán</a>-->
-<!--    </div>-->
 </main>
 </body>
 </html>

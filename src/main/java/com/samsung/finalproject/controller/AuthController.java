@@ -34,17 +34,14 @@ public class AuthController {
 
     @PostMapping("/register")
     public String processRegistration(@ModelAttribute User user, Model model) {
-        // Kiểm tra xem username đã tồn tại chưa
         if (userService.findByUsername(user.getUsername()) != null) {
             model.addAttribute("message", "Tên đăng nhập đã tồn tại!");
             return "register";
         }
 
-        // Đăng ký người dùng
         userService.registerUser(user.getUsername(), user.getPassword());
         model.addAttribute("message", "Đăng ký thành công! Hãy đăng nhập.");
-        return "login"; // Quay lại trang đăng nhập sau khi thành công
+        return "login";
     }
-
 
 }
